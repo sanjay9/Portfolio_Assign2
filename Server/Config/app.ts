@@ -17,12 +17,12 @@ import cors from 'cors'; // Cross-Origin Resource Sharing
 // Step 2 for auth - define our auth objects
 let localStrategy = passportLocal.Strategy; // alias
 // Step 3 for auth - import the User Model
-//import User from '../Models/user';
+import User from '../Models/user';
 
 // import router data from the router module(s)
 import indexRouter from '../Routes/index'; 
 //import movieListRouter from '../Routes/movie-list';
-//import authRouter from '../Routes/auth';
+import authRouter from '../Routes/auth';
 
 // create the application object - which is of type express
 const app = express();
@@ -66,16 +66,16 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 // Step 7 for auth - implement the auth strategy
-//passport.use(User.createStrategy());
+passport.use(User.createStrategy());
 // Step 8 for auth - setup User serialization and deserialization (encoding / decoding)
-//passport.serializeUser(User.serializeUser());
-//passport.deserializeUser(User.deserializeUser());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // add routing
 app.use('/', indexRouter);
 
 //app.use('/', movieListRouter);
-//app.use('/', authRouter);
+app.use('/', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 

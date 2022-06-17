@@ -1,4 +1,4 @@
-export const LocalURI = "mongodb://127.0.0.1/media";
-export const RemoteURI = "mongodb+srv://thomas:fYh8xaJ3olIzlJMn@cluster0.o0zosqc.mongodb.net/media?retryWrites=true&w=majority";
+export const LocalURI = "mongodb://127.0.0.1/contactDB";
+export const RemoteURI = "mongodb+srv://sanjay:QfBS75JcjMyAtCdR@cluster0.neltn.mongodb.net/contactDB?retryWrites=true&w=majority";
 export const HostName = "MongoDB Atlas";
 export const Secret = "someSecret";
