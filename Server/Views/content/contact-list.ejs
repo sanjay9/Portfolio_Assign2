@@ -28,9 +28,36 @@
                             <td><a href="/updateview/<%= contacts[count]._id %>" class="btn btn-primary btn-sm">
                                 <i class="fas fa-pencil-alt"></i> Update</a>
                                
-                                    <a href="/contact-list/delete/<%= contacts[count]._id %>" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i> Delete</a>
-                                
+                                   
+                            <!--https://getbootstrap.com/docs/5.2/components/modal/-->
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class="fas fa-trash-alt"></i> DELETE
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Are you sure you wish to delete <%= contacts.Name %>?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        This action cannot be undone.
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <a href="/contact-list/delete/<%= contacts[count]._id %>" class="btn btn-danger">
+                                        <i class="fas fa-trash-alt"></i> Delete</a>
+                                                                               
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+
+                                    
                             </td>
                             
                         </tr>
