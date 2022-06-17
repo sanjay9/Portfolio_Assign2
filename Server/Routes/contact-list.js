@@ -9,7 +9,7 @@ const contact_list_1 = require("../Controllers/contact-list");
 const index_1 = require("../Util/index");
 router.get('/contact-list', index_1.AuthGuard, contact_list_1.DisplayContactListPage);
 router.get('/contact-list/delete/:id', index_1.AuthGuard, contact_list_1.performDelete);
-router.get('/updateview/:id', index_1.AuthGuard, contact_list_1.displayEditPage);
-router.post('/updateview/:id', index_1.AuthGuard, contact_list_1.processEditPage);
+router.get('/contact-list/updateview/:id', index_1.AuthGuard, contact_list_1.displayEditPage);
+router.post('/contact-list/updateview/:id', index_1.AuthGuard, contact_list_1.processEditPage);
 exports.default = router;
 //# sourceMappingURL=contact-list.js.map

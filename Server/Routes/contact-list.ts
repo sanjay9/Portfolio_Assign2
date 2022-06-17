@@ -12,9 +12,9 @@ router.get('/contact-list', AuthGuard, DisplayContactListPage);
 router.get('/contact-list/delete/:id', AuthGuard, performDelete);
 
 /* GET Route for displaying the Edit page - UPDATE Operation */
-router.get('/updateview/:id', AuthGuard, displayEditPage);
+router.get('/contact-list/updateview/:id', AuthGuard, displayEditPage);
 
 /* POST Route for processing the Edit page - UPDATE Operation */
-router.post('/updateview/:id', AuthGuard, processEditPage);
+router.post('/contact-list/updateview/:id', AuthGuard, processEditPage);
 
 export default router;

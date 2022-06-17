@@ -23,7 +23,7 @@ export function DisplayContactListPage(req: express.Request, res: express.Respon
 }
 
 
-
+//Delete from ContactDB
 export function performDelete(req: express.Request, res: express.Response, next: express.NextFunction) 
 {
     let id = req.params.id;
@@ -42,7 +42,7 @@ export function performDelete(req: express.Request, res: express.Response, next:
 
 
 
-
+//Search by id and return record
 export function displayEditPage(req: express.Request, res: express.Response, next: express.NextFunction) 
 {
     let id = req.params.id;
@@ -61,7 +61,7 @@ export function displayEditPage(req: express.Request, res: express.Response, nex
     });
 }
 
-
+//save changes
 export function processEditPage(req: express.Request, res: express.Response, next: express.NextFunction) 
 {
     let id = req.params.id;
