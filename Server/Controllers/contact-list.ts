@@ -6,8 +6,10 @@ import Contact from '../Models/contact';
 import { UserDisplayName  } from '../Util';
 
 export function DisplayContactListPage(req: express.Request, res: express.Response, next: express.NextFunction) 
-{
-    Contact.find(function(err, contactsCollection)
+{  
+    //https://stackoverflow.com/questions/4299991/how-to-sort-in-mongoose
+    //To sort database
+    Contact.find({}).sort({Name: 1}).exec(function(err, contactsCollection)
     {
       // Database error
       if(err)

@@ -7,7 +7,7 @@ exports.processEditPage = exports.displayEditPage = exports.performDelete = expo
 const contact_1 = __importDefault(require("../Models/contact"));
 const Util_1 = require("../Util");
 function DisplayContactListPage(req, res, next) {
-    contact_1.default.find(function (err, contactsCollection) {
+    contact_1.default.find({}).sort({ Name: 1 }).exec(function (err, contactsCollection) {
         if (err) {
             console.error(err.message);
             res.end(err);
