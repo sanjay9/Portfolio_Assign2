@@ -10,7 +10,7 @@ function DisplayLoginPage(req, res, next) {
     if (!req.user) {
         return res.render('index', { title: "Login", page: "login", messages: req.flash("loginMessage"), displayName: (0, Util_1.UserDisplayName)(req) });
     }
-    return res.redirect('/movie-list');
+    return res.redirect('/contact-list');
 }
 exports.DisplayLoginPage = DisplayLoginPage;
 function ProcessLoginPage(req, res, next) {
@@ -28,7 +28,7 @@ function ProcessLoginPage(req, res, next) {
                 console.error(err);
                 res.end(err);
             }
-            return res.redirect('/home');
+            return res.redirect('/contact-list');
         });
     })(req, res, next);
 }

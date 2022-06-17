@@ -15,7 +15,7 @@ export function DisplayLoginPage(req: express.Request, res: express.Response, ne
     {
         return res.render('index', {title: "Login", page: "login", messages: req.flash("loginMessage"), displayName: UserDisplayName(req)});
     }
-    return res.redirect('/movie-list');
+    return res.redirect('/contact-list');
 }
 
 /* export function DisplayRegisterPage(req: express.Request, res: express.Response, next: express.NextFunction) 
@@ -56,7 +56,7 @@ export function ProcessLoginPage(req: express.Request, res: express.Response, ne
                 res.end(err);
             }
 
-            return res.redirect('/home');
+            return res.redirect('/contact-list');
         });
     })(req, res, next);
 }
